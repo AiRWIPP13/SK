@@ -1,4 +1,8 @@
-#include <stdio.h>
+// Gen_L_L.cpp: Okreœla punkt wejœcia dla aplikacji konsoli.
+//
+
+#include "stdafx.h"
+
 int main (int argc, char *argv[]) 
 {
 	
