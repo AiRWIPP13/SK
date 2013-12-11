@@ -1,6 +1,9 @@
 // Gen_L_L.cpp: Okreœla punkt wejœcia dla aplikacji konsoli.
 //
 
+#ifdef _WIN32
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 #include "stdafx.h"
 
 int main (int argc, char *argv[]) 
