@@ -4,14 +4,11 @@
 //
 
 #pragma once
-
 #include "targetver.h"
 
 #include <stdio.h>
-#include <tchar.h>
 #include <stdlib.h>
-#include <iostream>
-
+#include <ncurses.h>
 
 
 // TODO: W tym miejscu odwo³aj siê do dodatkowych nag³ówków wymaganych przez program
