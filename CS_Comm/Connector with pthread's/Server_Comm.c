@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #define strtok_r strtok_s
 
+char *message , client_message[2000];
+
 void error(const char *msg)
 {
 	perror(msg);
@@ -70,23 +72,11 @@ int server(int argc, char *argv[])
 		}
 		
 		puts("Klient polaczony");
-		
 	}
 
 
 	if (newsockfd < 0)
 			error("ERROR on accept");
-
-/*	bzero(buffer, 256);
-	n = read(newsockfd, buffer, 255);
-
-	if (n < 0) error("ERROR reading from socket");
-
-	printf("Wiadomosc: %s\n", buffer);
-	n = write(newsockfd, "Otrzymano.", 18);
-
-	if (n < 0) error("ERROR writing to socket");	
-*/
 
 
 //Zamykanie portów
@@ -100,19 +90,14 @@ void *connection_handler(void *socket_desc)
     //Deskryptor
     int sock = *(int*)socket_desc;
     int read_size;
-    char *message , client_message[2000];
+    
      
-    //Powitanie
-    /*message = "Hello! \n";
-    write(sock , message , strlen(message));
-     
-    message = "Napisz wiadomość: \n";
-    write(sock , message , strlen(message));*/
      
     //Otrzymaj msg from klient
     while( (read_size = recv(sock , client_message , 2000 , 0)) > 0 )
     {
-        //Zwróć msg
+        sleep(1);
+	//Zwróć msg
         write(sock , client_message , strlen(client_message));
     }
      

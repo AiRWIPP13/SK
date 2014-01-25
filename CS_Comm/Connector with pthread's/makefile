@@ -1,6 +1,12 @@
+CXXFLAGS = -pthread
+LDLIBS = -lpthread
+
 all: Core.exe 
+	ln -s Core.exe Serwer
+	ln -s Core.exe Klient
+
 Core.exe: Core.o Server_Comm.o Client_Comm.o
-	gcc -pthread -o chat.exe Core.o Server_Comm.o Client_Comm.o
+	gcc -lncurses -pthread -o chat.exe Core.o Server_Comm.o Client_Comm.o
 Core.o: Core.c 
 	gcc -c Core.c
 Server_Comm.o: Server_Comm.c

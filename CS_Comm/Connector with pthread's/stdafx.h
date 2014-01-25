@@ -5,16 +5,21 @@ int server(int argc, char *argv[]);
 
 void *connection_handler(void *); //utrzymanie łączności
 
+void *sendmessage(void *name);
+void *listener();
 
 //Bibl. linuxa
 #include <stdio.h>
 #include <stdlib.h>
-#include "unistd.h"
+#include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
 #include <unistd.h> 
 #include <pthread.h>
+#include <ncurses.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
 
 
 //Bibl. Windowsa
