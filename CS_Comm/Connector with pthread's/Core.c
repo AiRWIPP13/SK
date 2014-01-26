@@ -1,5 +1,4 @@
-// Core.cpp : Defines the entry point for the console application.
-//
+// Core.cpp : Rdzeń
 
 #include "stdafx.h"
 

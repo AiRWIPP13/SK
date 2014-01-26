@@ -1,13 +1,3 @@
-
-//Inicjalizacja definicji
-int client(int argc, char *argv[]);
-int server(int argc, char *argv[]);
-
-void *connection_handler(void *); //utrzymanie łączności
-
-void *sendmessage(void *name);
-void *listener();
-
 //Bibl. linuxa
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,6 +10,8 @@ void *listener();
 #include <ncurses.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
+#include <errno.h>
+#include "structs.h"
 
 
 //Bibl. Windowsa

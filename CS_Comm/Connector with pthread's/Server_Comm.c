@@ -12,6 +12,7 @@ void error(const char *msg)
 	exit(1);
 }
 
+
 int server(int argc, char *argv[])
 {
 	int sockfd, newsockfd, portno, *new_sock;
@@ -30,7 +31,7 @@ int server(int argc, char *argv[])
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	if (sockfd < 0)
-		error("ERROR opening socket");
+		perror("ERROR opening socket");
 
 	bzero((char *)&serv_addr, sizeof(serv_addr));
 	portno = atoi(argv[1]);
@@ -40,7 +41,7 @@ int server(int argc, char *argv[])
 
 	if (bind(sockfd, (struct sockaddr *) &serv_addr,
 		sizeof(serv_addr)) < 0)
-		error("ERROR on binding");
+		perror("ERROR on binding");
 
 	printf("\n Gotowy! ...\n");
 
@@ -96,7 +97,7 @@ void *connection_handler(void *socket_desc)
     //Otrzymaj msg from klient
     while( (read_size = recv(sock , client_message , 2000 , 0)) > 0 )
     {
-        sleep(1);
+        //sleep(1);
 	//Zwróć msg
         write(sock , client_message , strlen(client_message));
     }
